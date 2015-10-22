@@ -5,11 +5,26 @@ app.controller("mainCtrl",function($scope,$http){
         $scope.city = data.city;
         $scope.phone = $scope.city[2].phone;
         $scope.activeClass = 'activeLi';
+        $scope.textHotel = 'Simferopol Crimea Ukraine Train Station White Hostel';
+        $scope.textHotel = $scope.textHotel.slice(0,45);
+        $scope.visible = {};
+        $scope.openPopup = false;
+
         $scope.addSpanPhone = function(phone){
             $scope.phone = phone;
         };
-        $scope.enter = function(name){
-            name = $scope.activeClass;
-        }
     })
+    console.log($scope.numberSlice);
+});
+$( document ).ready(function() {
+    $(window).resize(function(){
+        $('.b-popup-content').css({
+            position:'absolute',
+            left: ($(window).width()
+            - $('.b-popup-content').outerWidth())/2,
+            top: ($(window).height()
+            - $('.b-popup-content').outerHeight())/2
+        });
+    });
+    $(window).resize();
 });

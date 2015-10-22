@@ -16,10 +16,10 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/app.js"></script>
 </head>
-<body>
-    <div class="container" ng-controller="mainCtrl">
+<body ng-controller="mainCtrl">
+    <div class="container">
         <!-- Split button -->
-        <div class="menu_block col-md-6">
+        <div class="menu_block">
             <span>{{phone}}</span>
             <div class="btn-group">
                 <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -30,6 +30,18 @@
                     <li ng-repeat="item in city" ng-click=addSpanPhone(item.phone)><a href="#" ng-mouseenter=enter(item.name)>{{item.name}}</a></li>
                 </ul>
             </div>
+        </div>
+
+        <div class="hotel_name">
+            {{textHotel}}
+        </div>
+    </div>
+
+    <button class="btn btn-primary" ng-click="openPopup = !openPopup">Открыть окно</button>
+    <div class="b-popup" ng-show="openPopup">
+        <div class="b-popup-content">
+            <p>Text in Popupgdfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff</p>
+            <button class="btn btn-primary" ng-click="openPopup = !openPopup">Закрыть окно</button>
         </div>
     </div>
 
