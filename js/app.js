@@ -14,17 +14,25 @@ app.controller("mainCtrl",function($scope,$http){
             $scope.phone = phone;
         };
     })
-    console.log($scope.numberSlice);
+    console.log();
 });
 $( document ).ready(function() {
-    $(window).resize(function(){
-        $('.b-popup-content').css({
-            position:'absolute',
-            left: ($(window).width()
-            - $('.b-popup-content').outerWidth())/2,
-            top: ($(window).height()
-            - $('.b-popup-content').outerHeight())/2
-        });
+
+    $('#popup').magnificPopup({
+        delegate: 'a',
+        removalDelay: 500,
+        callbacks: {
+            beforeOpen: function() {
+                this.st.mainClass = this.st.el.attr('data-effect');
+            }
+        },
+        midClick: true
     });
-    $(window).resize();
+    function stickyNav() {
+        var scrollTop = $(window).scrollTop();
+        $('.scroll_block').toggleClass('sticky', scrollTop > 0);
+    }
+    $(window).one('scroll', stickyNav);
+    stickyNav();
+    console.log(question);
 });
