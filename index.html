@@ -23,20 +23,39 @@
 <div class="container-fluid scroll_block"></div>
     <div class="container">
         <!-- Split button -->
-        <div class="menu_block">
+        <div class="menu_block col-md-6">
             <span>{{phone}}</span>
             <div class="btn-group">
-                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="caret"></span>
+                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" ng-click=caretRevers() aria-haspopup="true" aria-expanded="false">
+                    <span ng-class="{'caret':!caretClass}"></span>
+                    <span ng-class="{'caret_revers':caretClass}"></span>
                     <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li ng-repeat="item in city" ng-click=addSpanPhone(item.phone)><a href="#" ng-mouseenter=enter(item.name)>{{item.name}}</a></li>
+                    <li ng-repeat="item in city" ng-click=addSpanPhone(item.phone)>
+                        <a href="#" ng-click=caretRevers()>{{item.name}}</a>
+                    </li>
                 </ul>
             </div>
         </div>
 
-        <div class="hotel_name">
+        <div id="moneyDrop" class="menu_block col-md-6">
+            <div class="btn-group">
+                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" ng-click=caretRevers2() aria-haspopup="true" aria-expanded="false">
+                    <span ng-style="{color:'#828282'}">{{name | uppercase}}</span>
+                    <span ng-class="{'caret':!caretClass2}" ng-style="{color:'#828282'}"></span>
+                    <span ng-class="{'caret_revers':caretClass2}" ng-style="{color:'#828282'}"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu" ng-style="{left:'39px'}">
+                    <li ng-repeat="item in money" ng-click=addSpanName(item.name)>
+                        <span></span><a href="#" ng-click=caretRevers($index)>{{item.name | uppercase}} - {{item.description}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="hotel_name col-md-12">
             {{textHotel}}
         </div>
     </div>
@@ -44,7 +63,7 @@
     <div id="popup">
         <a href="#test-popup" class="btn btn-primary" data-effect="mfp-zoom-in">Open popup</a>
         <div id="test-popup" class="white-popup mfp-with-anim mfp-hide">
-            You may put any HTML here. This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show. He who searches for meaning here will be sorely disappointed.
+            ITT test popup
         </div>
     </div>
 

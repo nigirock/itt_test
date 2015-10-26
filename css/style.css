@@ -7,18 +7,19 @@
 	height: 100px;
 	background-color: #0053cf;
 	opacity: 0;
+	display: none;
 }
 .sticky{
 	opacity: 1;
 }
 .menu_block{
 	position: relative;
-	margin-top: 200px;
+
 }
 .menu_block > span{
 	position: absolute;
 	top: 57px;
-	left: 0px;
+	left: 10px;
 	font-family: 'Roboto', sans-serif;
 	font-size: 37px;
 	color: #0053cf;
@@ -30,32 +31,55 @@
 .dropdown-menu>li>a.active_menu:hover{
 	color: #f8a204 !important;
 }
-.activeLi{
-	color: #f8a204 !important;
-}
-
+.dropdown-menu>li>a:hover{
+	 background-color: transparent !important;
+	 background-image: none !important;
+	 color: #f8a204 !important;
+ }
 .open > .dropdown-menu{
-	left: 9px;
+	left: 6px;
 	top: 146%;
 	margin: 0;
 	border-radius: 0;
 	z-index: 0;
 	font-family: sans-serif;
 	font-size: 17px;
-	min-width: 300px;
-	box-shadow: 0 0 3px rgba(0,0,0,.125);
+	min-width: 305px;
+	box-shadow: 0 0 3px rgba(0,0,0,.5);
 	border: 1px solid #eee;
 }
 .btn-group .btn{
 	border-radius: 0;
 	box-shadow: none;
 }
+.caret{
+	color: #0053cf;
+	display: inline-block;
+	width: 0;
+	height: 0;
+	margin-left: 2px;
+	vertical-align: middle;
+	border-top: 4px dashed;
+	border-right: 4px solid transparent;
+	border-left: 4px solid transparent;
+}
+.caret_revers{
+	color: #0053cf;
+	display: inline-block;
+	width: 0;
+	height: 0;
+	margin-left: 2px;
+	vertical-align: middle;
+	border-bottom: 4px dashed;
+	border-right: 4px solid transparent;
+	border-left: 4px solid transparent;
+}
 .btn-group .dropdown-toggle {
 	box-shadow: none;
 }
 button.btn.dropdown-toggle{
 	background: white;
-	box-shadow: 0 2px 5px rgba(0,0,0,.125);
+	box-shadow: 0 2px 5px rgba(0,0,0,.5);
 	border: 1px solid #eee;
 	z-index: 50;
 	border-bottom: 0;
@@ -64,8 +88,8 @@ button.btn.dropdown-toggle{
 	left: 275px;
 }
 .btn-group.open .dropdown-toggle {
-	-webkit-box-shadow: 0 0 3px rgba(0,0,0,.125)!important;
-	box-shadow: 0 0 3px rgba(0,0,0,.125)!important;
+	-webkit-box-shadow: 0 0 3px rgba(0,0,0,.5)!important;
+	box-shadow: 0 0 3px rgba(0,0,0,.5)!important;
 	position: relative;
 }
 .btn-group.open .dropdown-toggle:after {
@@ -82,10 +106,29 @@ button.btn.dropdown-toggle:active{
 	box-shadow: none;
 	border: 1px solid rgba(0,0,0,.15);
 }
+#moneyDrop .dropdown-menu>li>a:hover{
+	color: #0053cf !important;
+	background-color: #EAF2FF !important;
+}
+#moneyDrop .dropdown-menu>li>a{
+	padding: 3px 40px;
+}
+#moneyDrop .dropdown-menu>li{
+	position: relative;
+}
+
+.bird{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	background: url("../img/bird.png") no-repeat;
+	height: 12px;
+	width: 14px;
+}
 .hotel_name{
 	font-size: 25px;
 	width: 400px;
-	margin-top: 200px;
+	margin-top: 400px;
 	white-space: nowrap;
 }
 
@@ -96,5 +139,9 @@ button.btn.dropdown-toggle:active{
 	width:auto;
 	max-width: 70%;
 	margin: 0 auto;
+}
+#popup{
+	margin: 50px;
+	text-align: center;
 }
 
