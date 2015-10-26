@@ -29,6 +29,15 @@ app.controller("mainCtrl",function($scope,$http){
         };
     });
 });
+app.directive("myDirective",function(){
+    return {
+        link:function(scope,elements,attr){
+console.log(angular.isObject(scope))
+        },
+        restrict:"A",
+        template: "<div>Hello</div>"
+    }
+})
 $( document ).ready(function() {
 
     $('#popup').magnificPopup({
@@ -47,5 +56,5 @@ $( document ).ready(function() {
     }
     $(window).one('scroll', stickyNav);
     stickyNav();
-    console.log(question);
+
 });
