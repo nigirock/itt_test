@@ -22,7 +22,7 @@ app.controller("mainCtrl",function($scope,$http){
             currency.selected = true;
 
             $scope.caretClass = $scope.caretClass == false ? true : false;
-            debugger;
+           /* debugger;*/
         };
         $scope.caretRevers2 = function(){
             $scope.caretClass2 = $scope.caretClass2 == false ? true : false;
