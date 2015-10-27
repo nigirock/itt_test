@@ -12,6 +12,7 @@
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
     <script src="js/jquery.min.js"></script>
     <script src="js/angular.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -23,33 +24,34 @@
 <div class="container-fluid scroll_block"></div>
     <div class="container">
         <!-- Split button -->
-        <div class="menu_block col-md-6">
+        <div id="cityDrop" class="menu_block col-md-6 col-sm-12">
             <span>{{phone}}</span>
             <div class="btn-group">
-                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" ng-click=caretRevers() aria-haspopup="true" aria-expanded="false">
+                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" ng-click=caretRevers(city) aria-haspopup="true" aria-expanded="false">
                     <span ng-class="{'caret':!caretClass}"></span>
                     <span ng-class="{'caret_revers':caretClass}"></span>
                     <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <ul class="dropdown-menu">
                     <li ng-repeat="item in city" ng-click=addSpanPhone(item.phone)>
-                        <a href="#" ng-click=caretRevers()>{{item.name}}</a>
+                        <a href="#" ng-class="{'active' : item.selected}" ng-click=caretRevers(item)>{{item.name}}</a>
                     </li>
                 </ul>
             </div>
         </div>
 
-        <div id="moneyDrop" class="menu_block col-md-6">
+        <div id="moneyDrop" class="menu_block col-md-6 col-sm-12">
             <div class="btn-group">
                 <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" ng-click=caretRevers2() aria-haspopup="true" aria-expanded="false">
-                    <span ng-style="{color:'#828282'}">{{name | uppercase}}</span>
-                    <span ng-class="{'caret':!caretClass2}" ng-style="{color:'#828282'}"></span>
-                    <span ng-class="{'caret_revers':caretClass2}" ng-style="{color:'#828282'}"></span>
+                    <span ng-style="{color:'#808080'}">{{name | uppercase}}</span>
+                    <span ng-class="{'caret':!caretClass2}" ng-style="{color:'#808080'}"></span>
+                    <span ng-class="{'caret_revers':caretClass2}" ng-style="{color:'#808080'}"></span>
                     <span class="sr-only">Toggle Dropdown</span>
                 </button>
-                <ul class="dropdown-menu" ng-style="{left:'39px'}">
+                <ul class="dropdown-menu">
                     <li ng-repeat="item in money" ng-click=addSpanName(item.name)>
-                        <span ng-class="{'bird' : birdBool}"></span><a href="#" ng-click=caretRevers($event,birdBool)>{{item.name | uppercase}} - {{item.description}}</a>
+                        <span ng-class="{'bird' : item.selected}"></span>
+                        <a href="#" ng-class="{'black' : item.selected}" ng-click=caretRevers(item)>{{item.name | uppercase}} - {{item.description}}</a>
                     </li>
                 </ul>
             </div>
@@ -63,16 +65,9 @@
     <div id="popup">
         <a href="#test-popup" class="btn btn-primary" data-effect="mfp-zoom-in">Open popup</a>
         <div id="test-popup" class="white-popup mfp-with-anim mfp-hide">
-            ITT test popup
+            ITT test popup Lorem ipsum dolor sit amet, consectetur adipisicing elit. At corporis cumque, deleniti earum eveniet explicabo illum ipsam laudantium minus natus nemo, nulla, odit quibusdam recusandae reiciendis sed temporibus tenetur
         </div>
     </div>
- <div my-directive="city"></div>
-<div id="question"></div>
-<div id="answer"></div>
-
-<script>
-    console.log(question);
-</script>
 
 </body>
 </html>

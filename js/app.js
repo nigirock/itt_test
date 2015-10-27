@@ -6,17 +6,23 @@ app.controller("mainCtrl",function($scope,$http){
         $scope.money = data.money;
         $scope.phone = $scope.city[2].phone;
         $scope.name = $scope.money[0].name;
-        $scope.activeClass = 'activeLi';
         $scope.textHotel = 'Simferopol Crimea Ukraine Train Station White Hostel';
         $scope.textHotel = $scope.textHotel.slice(0,45);
         $scope.caretClass = false;
-        $scope.birdBool = false;
         $scope.caretClass2 = false;
 
-        $scope.caretRevers = function($event,birdBool){
+        $scope.caretRevers = function(currency){
+            for(var i=0;i<$scope.money.length;i++){
+                $scope.money[i].selected = false;
+            }
+
+            for(var y=0;y<$scope.city.length;y++){
+                $scope.city[y].selected = false;
+            }
+            currency.selected = true;
+
             $scope.caretClass = $scope.caretClass == false ? true : false;
-            $($event.target).prev().prepend("<span>Hi</span>");
-            console.log(birdBool);
+            debugger;
         };
         $scope.caretRevers2 = function(){
             $scope.caretClass2 = $scope.caretClass2 == false ? true : false;
