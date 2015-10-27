@@ -49,7 +49,7 @@
                 </button>
                 <ul class="dropdown-menu" ng-style="{left:'39px'}">
                     <li ng-repeat="item in money" ng-click=addSpanName(item.name)>
-                        <span></span><a href="#" ng-click=caretRevers($index)>{{item.name | uppercase}} - {{item.description}}</a>
+                        <span ng-class="{'bird' : birdBool}"></span><a href="#" ng-click=caretRevers($event,birdBool)>{{item.name | uppercase}} - {{item.description}}</a>
                     </li>
                 </ul>
             </div>

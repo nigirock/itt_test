@@ -10,13 +10,13 @@ app.controller("mainCtrl",function($scope,$http){
         $scope.textHotel = 'Simferopol Crimea Ukraine Train Station White Hostel';
         $scope.textHotel = $scope.textHotel.slice(0,45);
         $scope.caretClass = false;
+        $scope.birdBool = false;
         $scope.caretClass2 = false;
-        $scope.birdClass = "bird";
 
-        $scope.caretRevers = function(index){
+        $scope.caretRevers = function($event,birdBool){
             $scope.caretClass = $scope.caretClass == false ? true : false;
-            $scope.money[index] = $scope.money[index].birdClass;
-            console.log($scope.money[index])
+            $($event.target).prev().prepend("<span>Hi</span>");
+            console.log(birdBool);
         };
         $scope.caretRevers2 = function(){
             $scope.caretClass2 = $scope.caretClass2 == false ? true : false;
@@ -29,15 +29,7 @@ app.controller("mainCtrl",function($scope,$http){
         };
     });
 });
-app.directive("myDirective",function(){
-    return {
-        link:function(scope,elements,attr){
-console.log(angular.isObject(scope))
-        },
-        restrict:"A",
-        template: "<div>Hello</div>"
-    }
-})
+
 $( document ).ready(function() {
 
     $('#popup').magnificPopup({
